@@ -362,19 +362,17 @@ export const get_pokemon_test = async () => {
 		.catch((error) => {
 			data.message = error;
 		});
-
 	return data;
 };
 
-export const get_pokemon_name = async ({ name }) => {
+export const get_pokemon_name = async (name) => {
 	await axios
 		.get(API_POKEMON + name)
 		.then((resp) => {
-			data.hero = resp.data;
+			data.pokemon = resp.data;
 		})
 		.catch((error) => {
 			data.message = error;
 		});
-
 	return data;
 };
