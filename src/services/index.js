@@ -1,45 +1,41 @@
-import axios from "axios";
 import React from "react";
-/*
-const API_URL = "https://pokeapi.co/api/v2/";
-const API_POKEMON = API_URL + "pokemon/";
-
-function get_pokemon_name(name) {
-	axios.get(API_POKEMON + name).then((res) => {
-		return res.data;
-	});
-}
-
-function Services() {
-	return (
-		<>
-			<h1>Hello Services</h1>
-			<p></p>
-		</>
-	);
-}
-
-export default Services;
-*/
-const baseURL = "https://pokeapi.co/api/v2/pokemon/lucario";
-//const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+import { get_pokemon_test, get_pokemon_name } from "./api/Api";
 
 export default function Services() {
-	const [pokemon, setPost] = React.useState(null);
+	const [pokemon, setPokemon] = React.useState([]);
+	const [pokemon1, setPokemon1] = React.useState([]);
 
 	React.useEffect(() => {
-		axios.get(baseURL).then((response) => {
-			setPost(response.data);
-			console.log(response.data);
+		get_pokemon_test().then((res) => {
+			setPokemon(res.pokemon);
+		});
+
+		get_pokemon_name().then((res) => {
+			setPokemon1(res.pokemon);
 		});
 	}, []);
-
-	if (!pokemon) return null;
 
 	return (
 		<div>
 			<h1>Hello Services</h1>
-			<p>{pokemon.name}</p>
+			<p>get_pokemon_test = {pokemon.name}</p>
+
+			<div className="input-group mb-3">
+				<input
+					type="text"
+					className="form-control"
+					placeholder="Buscar Pokemon"
+					aria-label="Recipient's username"
+					aria-describedby="button-addon2"
+				/>
+				<button
+					className="btn btn-outline-secondary"
+					type="button"
+					id="button-addon2"
+				>
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</button>
+			</div>
 		</div>
 	);
 }
