@@ -1,9 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Template } from "./pages/index";
+import { Home } from "./pages/index";
 
 function App() {
-	return <Template></Template>;
+	return <Home></Home>;
 }
 
 export default App;
