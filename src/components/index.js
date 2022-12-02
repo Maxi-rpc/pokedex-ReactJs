@@ -1,9 +1,5 @@
-function Components() {
-	return (
-		<>
-			<h1>Hello Components</h1>
-		</>
-	);
-}
+import header from "./header/Header";
+import navBarSocial from "./navbar/NavbarSocial";
 
-export default Components;
+export const NavBarSocial = navBarSocial;
+export const Header = header;

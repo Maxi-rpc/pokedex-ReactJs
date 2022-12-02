@@ -1,12 +1,19 @@
+import { Container, Row } from "react-bootstrap";
+import { NavBarSocial } from "../../components";
+import Header from "../../components/header/Header";
+
 export default function Template() {
 	return (
 		<>
-			<div>
-				<h1>Template</h1>
-				<h2>Header</h2>
+			<Container fluid>
+				<h6>Template</h6>
+				<Row>
+					<NavBarSocial></NavBarSocial>
+				</Row>
+				<Header></Header>
 
 				<p>footer</p>
-			</div>
+			</Container>
 		</>
 	);
 }
