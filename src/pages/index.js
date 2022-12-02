@@ -1,9 +1,3 @@
-function Pages() {
-	return (
-		<>
-			<h1>Hello Pages</h1>
-		</>
-	);
-}
+import template from "./template/Template";
 
-export default Pages;
+export const Template = template;
