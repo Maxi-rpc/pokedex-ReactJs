@@ -1,8 +1,8 @@
 import { Container, Row } from "react-bootstrap";
-import { NavBarSocial } from "../../components";
-import Header from "../../components/header/Header";
+import { NavBarSocial, Header, Footer } from "../../components";
 
-export default function Template() {
+export default function Template(props) {
+	const children = props.children;
 	return (
 		<>
 			<Container fluid>
@@ -12,7 +12,9 @@ export default function Template() {
 				</Row>
 				<Header></Header>
 
-				<p>footer</p>
+				{children}
+
+				<Footer></Footer>
 			</Container>
 		</>
 	);
