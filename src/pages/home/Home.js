@@ -26,7 +26,7 @@ const pokemon = {
 
 export default function Home() {
 	let lista = [];
-	for (let index = 0; index < 12; index++) {
+	for (let index = 0; index < 30; index++) {
 		lista.push(pokemon);
 	}
 
