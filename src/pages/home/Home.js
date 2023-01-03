@@ -38,6 +38,7 @@ export default function Home() {
 					{lista.map((singlePokemon) => (
 						<CardPokemon
 							name={singlePokemon.name}
+							pokemon_id={singlePokemon.id}
 							sprites={singlePokemon.sprites}
 						></CardPokemon>
 					))}

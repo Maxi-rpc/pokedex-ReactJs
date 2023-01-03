@@ -6,7 +6,6 @@ export default function Template(props) {
 	return (
 		<>
 			<Container fluid>
-				<h6>Template</h6>
 				<Row>
 					<NavBarSocial></NavBarSocial>
 				</Row>
@@ -14,7 +13,9 @@ export default function Template(props) {
 
 				{children}
 
-				<Footer></Footer>
+				<Row>
+					<Footer></Footer>
+				</Row>
 			</Container>
 		</>
 	);
