@@ -353,19 +353,31 @@ let data = {
 	pokemon: {},
 };
 
-export const get_pokemon_test = async () => {
-	await axios
-		.get(URL_TEST)
-		.then((resp) => {
-			data.pokemon = resp.data;
-		})
-		.catch((error) => {
-			data.message = error;
-		});
+const pokemons_cantidad = {
+	max: 905,
+	min: 1,
+};
+
+const paginado = {
+	offset: 1,
+	limit: 18,
+};
+
+export const get_pokemons = async (offset, limit) => {
+	for (let index = paginado.offset; index <= paginado.limit; index++) {
+		await axios
+			.get(API_POKEMON + index)
+			.then((resp) => {
+				data.pokemon = resp.data;
+			})
+			.catch((error) => {
+				data.message = error;
+			});
+	}
 	return data;
 };
 
-export const get_pokemon_name = async (name) => {
+export const get_pokemon = async (name) => {
 	await axios
 		.get(API_POKEMON + name)
 		.then((resp) => {

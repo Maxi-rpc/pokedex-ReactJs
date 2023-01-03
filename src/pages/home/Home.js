@@ -22,11 +22,27 @@ const pokemon = {
 			},
 		},
 	},
+	types: [
+		{
+			slot: 1,
+			type: {
+				name: "fairy",
+				url: "https://pokeapi.co/api/v2/type/18/",
+			},
+		},
+		{
+			slot: 1,
+			type: {
+				name: "fairy",
+				url: "https://pokeapi.co/api/v2/type/18/",
+			},
+		},
+	],
 };
 
 export default function Home() {
 	let lista = [];
-	for (let index = 0; index < 30; index++) {
+	for (let index = 0; index < 18; index++) {
 		lista.push(pokemon);
 	}
 
@@ -40,6 +56,7 @@ export default function Home() {
 							name={singlePokemon.name}
 							pokemon_id={singlePokemon.id}
 							sprites={singlePokemon.sprites}
+							types={singlePokemon.types}
 						></CardPokemon>
 					))}
 				</ContainerPokemon>
