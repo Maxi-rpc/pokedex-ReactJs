@@ -358,23 +358,18 @@ const pokemons_cantidad = {
 	min: 1,
 };
 
-const paginado = {
+let paginado = {
 	offset: 1,
 	limit: 18,
 };
 
 export const get_pokemons = async (offset, limit) => {
+	let list_pokemons = [];
 	for (let index = paginado.offset; index <= paginado.limit; index++) {
-		await axios
-			.get(API_POKEMON + index)
-			.then((resp) => {
-				data.pokemon = resp.data;
-			})
-			.catch((error) => {
-				data.message = error;
-			});
+		let pokemon = await get_pokemon(index);
+		list_pokemons.push(pokemon);
 	}
-	return data;
+	return list_pokemons;
 };
 
 export const get_pokemon = async (name) => {

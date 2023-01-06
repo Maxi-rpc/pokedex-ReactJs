@@ -1,5 +1,7 @@
 import Template from "../template/Template";
 import { ContainerPokemon, CardPokemon } from "../../components/index";
+import { Get_pokemons } from "../../services/index";
+import { useState } from "react";
 
 const pokemon = {
 	id: 132,
@@ -41,10 +43,14 @@ const pokemon = {
 };
 
 export default function Home() {
+	const [pokemons, setPokemons] = useState([]);
+
 	let lista = [];
-	for (let index = 0; index < 18; index++) {
-		lista.push(pokemon);
-	}
+	Get_pokemons(1, 1).then((res) => {
+		res.forEach((element) => {
+			lista.push(element.pokemon);
+		});
+	});
 
 	return (
 		<>
