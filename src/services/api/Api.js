@@ -358,18 +358,20 @@ const pokemons_cantidad = {
 	min: 1,
 };
 
-let paginado = {
-	offset: 1,
-	limit: 18,
-};
+let offset = 1;
+let limit = 18;
 
-export const get_pokemons = async (offset, limit) => {
-	let list_pokemons = [];
-	for (let index = paginado.offset; index <= paginado.limit; index++) {
-		let pokemon = await get_pokemon(index);
-		list_pokemons.push(pokemon);
-	}
-	return list_pokemons;
+export const get_pokemons = async (offset = 1, limit = 19) => {
+	let API_POKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
+	await axios
+		.get(API_POKEMONS)
+		.then((resp) => {
+			data.pokemon = resp.data;
+		})
+		.catch((error) => {
+			data.message = error;
+		});
+	return data;
 };
 
 export const get_pokemon = async (name) => {
