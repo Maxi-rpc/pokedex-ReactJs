@@ -10,7 +10,7 @@ const pokemons_cantidad = {
 let offset = 1;
 let limit = 18;
 
-export const get_pokemons = (offset = 0, limit = 19) => {
+export const get_pokemons = (offset = 0, limit = 18) => {
 	let API_POKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
 	return axios.get(API_POKEMONS);
 };
