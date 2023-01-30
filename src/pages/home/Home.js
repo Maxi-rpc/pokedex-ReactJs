@@ -1,9 +1,9 @@
 import Template from "../template/Template";
 import { ContainerPokemon, CardPokemon } from "../../components/index";
-import { Get_pokemons } from "../../services/index";
-import { useState, useEffect } from "react";
+import { Get_pokemons, Get_pokemon } from "../../services/index";
+import React, { useEffect, useState } from "react";
 
-const pokemon = {
+const pokemon_test = {
 	id: 132,
 	name: "ditto",
 	sprites: {
@@ -43,41 +43,12 @@ const pokemon = {
 };
 
 export default function Home() {
-	const [pokemons, setPokemons] = useState([]);
-
-	let lista = [];
-	for (let index = 0; index < 18; index++) {
-		lista.push(pokemon);
-	}
-
-	const fetch_pokemons = async () => {
-		try {
-			const data = await Get_pokemons();
-			setPokemons(data.pokemon);
-			console.log(data);
-		} catch (error) {}
-	};
-
-	useEffect(() => {
-		fetch_pokemons();
-	}, []);
-
 	return (
 		<>
 			<Template>
 				<div>Home</div>
 				<ContainerPokemon>
-					{lista.map((singlePokemon) => {
-						return (
-							<CardPokemon
-								name={singlePokemon.name}
-								pokemon_id={singlePokemon.id}
-								sprites={singlePokemon.sprites}
-								types={singlePokemon.types}
-								key={singlePokemon.name + singlePokemon.id}
-							></CardPokemon>
-						);
-					})}
+					<CardPokemon></CardPokemon>
 				</ContainerPokemon>
 			</Template>
 		</>
