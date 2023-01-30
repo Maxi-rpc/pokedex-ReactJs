@@ -1,6 +1,6 @@
 import Template from "../template/Template";
 import { ContainerPokemon, CardPokemon } from "../../components/index";
-import { Get_pokemons, Get_pokemon } from "../../services/index";
+import { Get_pokemons } from "../../services/index";
 import React, { useEffect, useState } from "react";
 
 export default function Home() {
