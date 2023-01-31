@@ -3,7 +3,7 @@ import logo from "../../logo.svg";
 
 export default function Header() {
 	return (
-		<Row className="justify-content-center">
+		<Row className="justify-content-center my-3">
 			<Col md="6" className="text-center">
 				<Row>
 					<h1>
