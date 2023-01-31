@@ -1,7 +1,12 @@
 import Template from "../template/Template";
-import { ContainerPokemon, CardPokemon } from "../../components/index";
+import {
+	ContainerPokemon,
+	CardPokemon,
+	CardDetail,
+} from "../../components/index";
 import { Get_pokemons } from "../../services/index";
 import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
 
 export default function Home() {
 	const [list_pokemons, setList_pokemons] = useState(null);
@@ -20,7 +25,14 @@ export default function Home() {
 		return (
 			<>
 				<Template>
-					<ContainerPokemon>{grid_pokemons}</ContainerPokemon>
+					<Row>
+						<Col md="8">
+							<ContainerPokemon>{grid_pokemons}</ContainerPokemon>
+						</Col>
+						<Col md="4">
+							<CardDetail></CardDetail>
+						</Col>
+					</Row>
 				</Template>
 			</>
 		);

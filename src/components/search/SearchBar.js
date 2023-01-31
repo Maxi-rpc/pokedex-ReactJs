@@ -12,9 +12,10 @@ export default function SearchBar() {
 								placeholder="Buscar Pokemon..."
 								aria-label="Buscar Pokemon..."
 								aria-describedby="basic-addon2"
+								name="pokemonSearch"
 							/>
 							<Button variant="outline-secondary" id="button-addon2">
-								<i class="fa-solid fa-magnifying-glass"></i>
+								<i className="fa-solid fa-magnifying-glass"></i>
 							</Button>
 						</InputGroup>
 					</Form>
