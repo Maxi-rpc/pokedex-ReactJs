@@ -1,4 +1,4 @@
-import { Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row, Pagination } from "react-bootstrap";
 
 export default function ContainerPokemon(props) {
 	const children = props.children;
@@ -10,6 +10,12 @@ export default function ContainerPokemon(props) {
 						<Card.Body>
 							<Row>{children}</Row>
 						</Card.Body>
+						<Card.Footer className="d-flex justify-content-center">
+							<Pagination>
+								<Pagination.Prev />
+								<Pagination.Next />
+							</Pagination>
+						</Card.Footer>
 					</Card>
 				</Col>
 			</Row>
