@@ -1,19 +1,14 @@
 import { Container, Row } from "react-bootstrap";
-import { NavBarSocial, Header, Footer } from "../../components";
+import { HeaderComponent, FooterComponent } from "../../components";
 
 export default function Template(props) {
 	const children = props.children;
 	return (
 		<>
 			<Container fluid>
-				<Row>
-					<NavBarSocial></NavBarSocial>
-				</Row>
-				<Header></Header>
+				<HeaderComponent></HeaderComponent>
 				{children}
-				<Row>
-					<Footer></Footer>
-				</Row>
+				<FooterComponent></FooterComponent>
 			</Container>
 		</>
 	);
