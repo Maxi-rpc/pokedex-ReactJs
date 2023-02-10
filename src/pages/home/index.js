@@ -1,0 +1,15 @@
+import Template from "../template"; 
+import { Col, Row } from "react-bootstrap";
+
+export default function Home() {
+	return (
+		<>
+			<Template>
+				<Row>
+					<Col md="8"></Col>
+					<Col md="4"></Col>
+				</Row>
+			</Template>
+		</>
+	);
+}

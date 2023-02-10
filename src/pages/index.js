@@ -1,5 +1,5 @@
-import template from "./template/Template";
-import home from "./home/Home";
+import template from "./template";
+import home from "./home";
 
 export const Template = template;
 export const Home = home;
