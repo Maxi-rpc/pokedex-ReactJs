@@ -1,4 +1,4 @@
-import { Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { HeaderComponent, FooterComponent } from "../../components";
 
 export default function Template(props) {
