@@ -1,4 +1,8 @@
 const Config = {
+	creator: "Maximiliano Miranda",
+	alias: "Maxirpc",
+	description:
+		"Pokedex creada con React y Bootstrap utilizando axios y la api de PokeApi",
 	title: "Pokedex React",
 	logo: "logo_pokeball.png",
 	social: [

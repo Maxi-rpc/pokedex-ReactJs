@@ -1,6 +1,6 @@
 import React from "react";
 // bootstrap
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { Container, Row, Navbar, Nav } from "react-bootstrap";
 // assets
 import Config from "../../config";
 
@@ -14,21 +14,23 @@ export default function HeaderComponent() {
 
 	return (
 		<>
-			<Navbar bg="dark" variant="dark">
-				<Container>
-					<Navbar.Brand href="/">
-						<img
-							alt=""
-							src={Config.logo}
-							width="30"
-							height="30"
-							className="d-inline-block align-top"
-						/>{" "}
-						{Config.title}
-					</Navbar.Brand>
-					<Nav className="ms-auto">{listLinks}</Nav>
-				</Container>
-			</Navbar>
+			<Row>
+				<Navbar bg="dark" variant="dark">
+					<Container>
+						<Navbar.Brand href="/">
+							<img
+								alt=""
+								src={Config.logo}
+								width="30"
+								height="30"
+								className="d-inline-block align-top"
+							/>{" "}
+							{Config.title}
+						</Navbar.Brand>
+						<Nav className="ms-auto">{listLinks}</Nav>
+					</Container>
+				</Navbar>
+			</Row>
 		</>
 	);
 }

@@ -5,6 +5,7 @@ const API_POKEMON = API_URL + "pokemon/";
 // pokemon en total 905
 
 export const get_pokemons = (offset = 0, limit = 18) => {
+	limit = 905;
 	let API_POKEMONS = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
 	return axios.get(API_POKEMONS);
 };
