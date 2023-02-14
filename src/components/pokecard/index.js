@@ -12,7 +12,6 @@ export default function PokeCard({ data }) {
 	useEffect(() => {
 		Get_pokemon(data).then((res) => {
 			setPokeData(res.data);
-			console.log(res.data);
 		});
 	}, [data]);
 

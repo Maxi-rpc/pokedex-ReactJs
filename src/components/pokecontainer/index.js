@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // bootstrap
 import { Col, Row, Card } from "react-bootstrap";
 // components
@@ -20,7 +21,9 @@ export default function PokeContainer({ data }) {
 	}
 	const listItem = listPokemon.map((poke) => (
 		<Col className="my-2" md="2" key={poke.name}>
-			<PokeCard data={poke.name}></PokeCard>
+			<Link to={`/poke/${poke.name}`}>
+				<PokeCard data={poke.name}></PokeCard>
+			</Link>
 		</Col>
 	));
 	return (
