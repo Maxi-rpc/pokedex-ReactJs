@@ -1,5 +1,7 @@
 import React from "react";
+// bootstrap
 import { Container, Navbar, Nav } from "react-bootstrap";
+// assets
 import Config from "../../config";
 
 export default function HeaderComponent() {

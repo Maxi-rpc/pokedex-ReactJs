@@ -9,6 +9,6 @@ export const get_pokemons = (offset = 0, limit = 18) => {
 	return axios.get(API_POKEMONS);
 };
 
-export const get_pokemon = (name) => {
+export const get_pokemon = (name = "lucario") => {
 	return axios.get(API_POKEMON + name);
 };

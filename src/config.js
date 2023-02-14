@@ -5,17 +5,17 @@ const Config = {
 		{
 			name: "github",
 			url: "https://github.com/Maxi-rpc",
-			icon: <i class="fa-brands fa-github"></i>,
+			icon: <i className="fa-brands fa-github"></i>,
 		},
 		{
 			name: "linkedin",
 			url: "https://www.linkedin.com/in/maximiliano-g-miranda/",
-			icon: <i class="fa-brands fa-linkedin-in"></i>,
+			icon: <i className="fa-brands fa-linkedin-in"></i>,
 		},
 		{
 			name: "repo",
 			url: "https://github.com/Maxi-rpc/pokedex-reactjs",
-			icon: <i class="fa-solid fa-laptop-code"></i>,
+			icon: <i className="fa-solid fa-laptop-code"></i>,
 		},
 	],
 };
