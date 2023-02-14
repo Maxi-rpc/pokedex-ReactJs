@@ -1,9 +1,32 @@
 import React from "react";
+import { Container, Navbar, Nav } from "react-bootstrap";
+import Config from "../../config";
 
 export default function HeaderComponent() {
+	const links = Config.social;
+	const listLinks = links.map((item, index) => (
+		<Nav.Link key={index} href={item.url} target="_blank">
+			{item.icon}
+		</Nav.Link>
+	));
+
 	return (
 		<>
-			<h1>HeaderComponent</h1>
+			<Navbar bg="dark" variant="dark">
+				<Container>
+					<Navbar.Brand href="/">
+						<img
+							alt=""
+							src={Config.logo}
+							width="30"
+							height="30"
+							className="d-inline-block align-top"
+						/>{" "}
+						{Config.title}
+					</Navbar.Brand>
+					<Nav className="ms-auto">{listLinks}</Nav>
+				</Container>
+			</Navbar>
 		</>
 	);
 }
