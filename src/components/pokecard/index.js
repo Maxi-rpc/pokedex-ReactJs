@@ -5,18 +5,30 @@ import { Get_pokemon } from "../../services";
 import { Card } from "react-bootstrap";
 // util
 import { ColorType } from "../../utils";
+import Config from "../../config";
 
-export default function PokeCard({ data }) {
+export default function PokeCard({ name }) {
 	const [pokeData, setPokeData] = useState(null);
 
 	useEffect(() => {
-		Get_pokemon(data).then((res) => {
+		Get_pokemon(name).then((res) => {
 			setPokeData(res.data);
 		});
-	}, [data]);
+	}, [name]);
 
 	if (!pokeData) {
-		return <h5>No data</h5>;
+		return (
+			<>
+				<Card>
+					<Card.Img
+						variant="top"
+						src={Config.logo}
+						alt="no data"
+						width="100rem"
+					/>
+				</Card>
+			</>
+		);
 	}
 
 	return (
