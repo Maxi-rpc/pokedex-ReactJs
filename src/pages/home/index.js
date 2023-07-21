@@ -10,7 +10,11 @@ import { PokeContainer } from "../../components";
 
 export default function Home() {
 	const [listPokemonName, setListPokemonName] = useState(null);
+	const [query, setQuery] = useState("");
 
+	const searchPoke = (data) => {
+		return data.filter((item) => item.name.toLowerCase().includes(query));
+	};
 	useEffect(() => {
 		Get_pokemons().then((res) => {
 			setListPokemonName(res.data.results);
@@ -38,14 +42,16 @@ export default function Home() {
 								placeholder="Buscar pokemon"
 								aria-label="Buscar pokemon"
 								aria-describedby="basic-addon2"
+								id="searchPokemon"
+								onChange={(e) => setQuery(e.target.value)}
 							/>
-							<Button variant="outline-dark" id="button-addon2">
+							<Button variant="outline-dark" id="btn-addon2">
 								<i className="fa-solid fa-magnifying-glass"></i>
 							</Button>
 						</InputGroup>
 					</Col>
 				</Row>
-				<PokeContainer data={listPokemonName}></PokeContainer>
+				<PokeContainer data={searchPoke(listPokemonName)}></PokeContainer>
 			</Template>
 		</>
 	);

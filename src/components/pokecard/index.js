@@ -26,6 +26,9 @@ export default function PokeCard({ name }) {
 						alt="no data"
 						width="100rem"
 					/>
+					<Card.Footer className="bg-dark text-light text-capitalize">
+						#000 No data
+					</Card.Footer>
 				</Card>
 			</>
 		);
@@ -38,12 +41,13 @@ export default function PokeCard({ name }) {
 					variant="top"
 					src={pokeData.sprites.front_default}
 					alt={pokeData.name}
-					width="200rem"
+					width="150rem"
 				/>
-				<Card.Footer className="bg-dark text-light">
-					<h4 className="text-capitalize">
-						#{pokeData.id.toString().padStart(3, 0)} - {pokeData.name}
-					</h4>
+				<Card.Footer
+					style={{ backgroundColor: ColorType[pokeData.types[0].type.name] }}
+					className=" text-light text-capitalize"
+				>
+					#{pokeData.id.toString().padStart(3, 0)} - {pokeData.name}
 				</Card.Footer>
 			</Card>
 		</>
