@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home, PokePage } from "../pages";
+import { HomePage, PokePage } from "../pages";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Home />,
+		element: <HomePage />,
 	},
 	{
 		path: "/poke/:name",
