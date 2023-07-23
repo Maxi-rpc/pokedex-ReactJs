@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // api
 import { Get_pokemon } from "../../services";
 // bootstrap
-import { Card } from "react-bootstrap";
+import { Card, Spinner } from "react-bootstrap";
 // util
 import { ColorType } from "../../utils";
 import Config from "../../config";
@@ -27,7 +27,8 @@ export default function PokeCard({ name }) {
 						width="100rem"
 					/>
 					<Card.Footer className="bg-dark text-light text-capitalize">
-						#000 No data
+						<Spinner animation="border" variant="primary"></Spinner>
+						Cargando...
 					</Card.Footer>
 				</Card>
 			</>
