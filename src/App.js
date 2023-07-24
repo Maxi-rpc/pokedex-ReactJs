@@ -1,13 +1,11 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Home } from "./pages";
+import { RouterProvider } from "react-router-dom";
+// routes
+import Rutas from "./routes";
 
 function App() {
-	return (
-		<>
-			<Home></Home>
-		</>
-	);
+	return <RouterProvider router={Rutas}></RouterProvider>;
 }
 
 export default App;
