@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 // template
 import Template from "../template";
 // bootstrap
@@ -25,7 +25,6 @@ export default function Poke() {
 	useEffect(() => {
 		Get_pokemon(name).then((res) => {
 			setPokeData(res.data);
-			console.log(res.data);
 		});
 	}, [name]);
 
@@ -38,11 +37,12 @@ export default function Poke() {
 			<Container
 				style={{ backgroundColor: ColorType[pokeData.types[0].type.name] }}
 			>
+				{/* link to back */}
 				<Row className="pt-3">
 					<Col md="3">
-						<Button variant="outline-dark" size="lg">
+						<Link to={`/`} className="btn btn-lg btn-outline-dark">
 							<i className="fa-solid fa-arrow-left"></i>
-						</Button>
+						</Link>
 					</Col>
 				</Row>
 				{/* title image */}
@@ -65,7 +65,8 @@ export default function Poke() {
 							))}
 						</div>
 						<h6>
-							Height {pokeData.height} - weight {pokeData.weight}
+							Height {pokeData.height} decimeters - weight {pokeData.weight}{" "}
+							hectograms
 						</h6>
 					</Col>
 					<Col md="6">
@@ -103,8 +104,10 @@ export default function Poke() {
 															<ProgressBar
 																now={stat.base_stat}
 																max="255"
+																min="1"
 															></ProgressBar>
 														</Col>
+														<Col md="3">255</Col>
 													</Row>
 												))}
 											</Col>
