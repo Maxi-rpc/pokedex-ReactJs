@@ -2,7 +2,7 @@ import axios from "axios";
 const API_URL = "https://pokeapi.co/api/v2/";
 const API_POKEMON = API_URL + "pokemon/";
 
-// pokemon en total 905
+// pokemon en total 1010
 
 export const get_pokemons = (offset = 0, limit = 18) => {
 	limit = 1010;
@@ -12,4 +12,8 @@ export const get_pokemons = (offset = 0, limit = 18) => {
 
 export const get_pokemon = (name = "lucario") => {
 	return axios.get(API_POKEMON + name);
+};
+
+export const get_evolutions = (name) => {
+	return axios.get(`${API_URL}evolution-trigger/${name}/`);
 };

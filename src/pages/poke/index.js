@@ -15,16 +15,21 @@ import {
 	ProgressBar,
 } from "react-bootstrap";
 // api
-import { Get_pokemon } from "../../services";
+import { Get_pokemon, Get_evolutions } from "../../services";
 // utilitis
 import { ColorType } from "../../utils";
 
 export default function Poke() {
 	const { name } = useParams();
 	const [pokeData, setPokeData] = useState(null);
+	const [pokeEvolutions, setPokeEvolutions] = useState(null);
 	useEffect(() => {
 		Get_pokemon(name).then((res) => {
 			setPokeData(res.data);
+			Get_evolutions(pokeData.id).then((res) => {
+				setPokeEvolutions(res.data);
+				console.log(pokeEvolutions);
+			});
 		});
 	}, [name]);
 
