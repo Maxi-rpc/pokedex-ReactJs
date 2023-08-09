@@ -14,6 +14,6 @@ export const get_pokemon = (name = "lucario") => {
 	return axios.get(API_POKEMON + name);
 };
 
-export const get_evolutions = (name) => {
-	return axios.get(`${API_URL}evolution-trigger/${name}/`);
+export const get_evolutions = (id) => {
+	return axios.get(`${API_URL}evolution-chain/${id}/`);
 };
