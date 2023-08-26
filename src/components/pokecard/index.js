@@ -26,9 +26,8 @@ export default function PokeCard({ name }) {
 						alt="no data"
 						width="100rem"
 					/>
-					<Card.Footer className="bg-dark text-light text-capitalize">
-						<Spinner animation="border" variant="primary"></Spinner>
-						Cargando...
+					<Card.Footer className="bg-dark text-center">
+						<Spinner animation="border" variant="light"></Spinner>
 					</Card.Footer>
 				</Card>
 			</>
@@ -37,7 +36,10 @@ export default function PokeCard({ name }) {
 
 	return (
 		<>
-			<Card style={{ borderColor: ColorType[pokeData.types[0].type.name] }}>
+			<Card
+				className="h-100"
+				style={{ borderColor: ColorType[pokeData.types[0].type.name] }}
+			>
 				<Card.Img
 					variant="top"
 					src={pokeData.sprites.front_default}
@@ -46,7 +48,7 @@ export default function PokeCard({ name }) {
 				/>
 				<Card.Footer
 					style={{ backgroundColor: ColorType[pokeData.types[0].type.name] }}
-					className=" text-light text-capitalize"
+					className="h-100 text-light text-capitalize"
 				>
 					#{pokeData.id.toString().padStart(3, 0)} - {pokeData.name}
 				</Card.Footer>
