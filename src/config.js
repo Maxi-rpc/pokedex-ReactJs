@@ -4,7 +4,7 @@ const Config = {
 	description:
 		"Pokedex creada con React y Bootstrap utilizando axios y la api de PokeApi",
 	title: "Pokedex React",
-	logo: "logo_pokeball.png",
+	logo: "/logo_pokeball.png",
 	social: [
 		{
 			name: "github",

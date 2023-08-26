@@ -20,7 +20,7 @@ export default function PokeContainer({ data }) {
 		);
 	}
 	const listItem = listPokemon.map((poke) => (
-		<Col className="my-2" md="2" sm="3" key={poke.name}>
+		<Col className="my-2" md="3" sm="3" key={poke.name}>
 			<Link className="h6 text-decoration-none fs-6" to={`/poke/${poke.name}`}>
 				<PokeCard name={poke.name}></PokeCard>
 			</Link>

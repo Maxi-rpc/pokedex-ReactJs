@@ -6,7 +6,7 @@ import { Col, Row, Form, InputGroup, Button } from "react-bootstrap";
 // api
 import { Get_pokemons } from "../../services";
 // components
-import { PokeContainer } from "../../components";
+import { PokeContainer, Loader } from "../../components";
 
 export default function Home() {
 	const [listPokemonName, setListPokemonName] = useState(null);
@@ -24,7 +24,9 @@ export default function Home() {
 	if (!listPokemonName) {
 		return (
 			<>
-				<h1>No hay data</h1>
+				<Template>
+					<Loader />
+				</Template>
 			</>
 		);
 	}
@@ -36,7 +38,7 @@ export default function Home() {
 					<h1>Home</h1>
 				</Row>
 				<Row className="justify-content-center">
-					<Col md="2">
+					<Col md="4">
 						<InputGroup className="mb-3">
 							<Form.Control
 								placeholder="Buscar pokemon"
