@@ -13,7 +13,3 @@ export const get_pokemons = (offset = 0, limit = 18) => {
 export const get_pokemon = (name = "lucario") => {
 	return axios.get(API_POKEMON + name);
 };
-
-export const get_evolutions = (id) => {
-	return axios.get(`${API_URL}evolution-chain/${id}/`);
-};
