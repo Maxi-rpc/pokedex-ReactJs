@@ -1,21 +1,31 @@
 import React from "react";
 // bootstrap
-import { Row, Col, Navbar, Container } from "react-bootstrap";
+import { Row, Col, Navbar, Container, Nav } from "react-bootstrap";
 // config
 import Config from "../../config";
 
 export default function FooterComponent() {
+	const links = Config.social;
+	const listLinks = links.map((item, index) => (
+		<Nav.Link key={index} href={item.url} target="_blank">
+			{item.icon}
+		</Nav.Link>
+	));
 	return (
 		<>
-			<Navbar fixed="bottom" expand="lg" className="bg-dark text-light">
-				<Container fluid className="justify-content-center">
-					<Row className="py-3">
-						<Col md="12" className="text-center">
-							<p className="mb-0">Creado por {Config.creator}</p>
-						</Col>
-					</Row>
-				</Container>
-			</Navbar>
+			<Row>
+				<Navbar
+					fixed="bottom"
+					bg="dark"
+					variant="dark"
+					className="text-secondary"
+				>
+					<Container className="justify-content-center">
+						<p className="mb-0">Creado por {Config.creator}</p>
+						<Nav className="ms-2">{listLinks}</Nav>
+					</Container>
+				</Navbar>
+			</Row>
 		</>
 	);
 }

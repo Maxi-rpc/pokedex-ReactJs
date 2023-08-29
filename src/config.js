@@ -19,7 +19,7 @@ const Config = {
 		{
 			name: "repo",
 			url: "https://github.com/Maxi-rpc/pokedex-reactjs",
-			icon: <i className="fa-solid fa-laptop-code"></i>,
+			icon: <i className="fa-solid fa-code"></i>,
 		},
 	],
 };
