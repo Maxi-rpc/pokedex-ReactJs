@@ -1,6 +1,6 @@
 import React from "react";
 // bootstrap
-import { Row, Col, Navbar, Container, Nav } from "react-bootstrap";
+import { Row, Navbar, Container, Nav } from "react-bootstrap";
 // config
 import Config from "../../config";
 
