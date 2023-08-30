@@ -31,7 +31,7 @@ export default function PokeContainer({ data }) {
 			<Container>
 				<Row className="my-2">
 					<Col md="12">
-						<Card>
+						<Card className="border border-0">
 							<Card.Body>
 								<Row>{listItem}</Row>
 							</Card.Body>
