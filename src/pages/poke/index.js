@@ -12,6 +12,7 @@ import {
 	Button,
 	ProgressBar,
 	Collapse,
+	Carousel,
 } from "react-bootstrap";
 // api
 import { Get_pokemon } from "../../services";
@@ -50,14 +51,21 @@ export default function Poke() {
 						>
 							<Card.Body>
 								{/* link to back */}
-								<Row>
+								<Row className="justify-content-between">
 									<Col md="3">
 										<Link to={`/`} className="btn btn-lg btn-outline-dark">
 											<i className="fa-solid fa-arrow-left"></i>
 										</Link>
 									</Col>
+									<Col md="3" className="text-end">
+										<Image
+											thumbnail
+											width={"30%"}
+											src={pokeData.sprites.other.dream_world.front_default}
+										></Image>
+									</Col>
 								</Row>
-								{/* title image */}
+								{/* title and image */}
 								<Row className="align-items-center">
 									<Col md="6" className="text-capitalize">
 										<h5>#{pokeData.id.toString().padStart(3, 0)}</h5>
@@ -77,13 +85,40 @@ export default function Poke() {
 											))}
 										</div>
 									</Col>
+									{/* image */}
 									<Col md="6">
-										<Image
-											className="img-fluid"
-											src={
-												pokeData.sprites.other["official-artwork"].front_default
-											}
-										></Image>
+										<Carousel fade>
+											<Carousel.Item>
+												<Image
+													className="img-fluid"
+													src={
+														pokeData.sprites.other["official-artwork"]
+															.front_default
+													}
+												></Image>
+												<Carousel.Caption>
+													<h3>Official Artwork</h3>
+												</Carousel.Caption>
+											</Carousel.Item>
+											<Carousel.Item>
+												<Image
+													className="img-fluid"
+													src={pokeData.sprites.other.home.front_default}
+												></Image>
+												<Carousel.Caption>
+													<h3>Home</h3>
+												</Carousel.Caption>
+											</Carousel.Item>
+											<Carousel.Item>
+												<Image
+													className="img-fluid"
+													src={pokeData.sprites.other.home.front_shiny}
+												></Image>
+												<Carousel.Caption>
+													<h3>Home Shiny</h3>
+												</Carousel.Caption>
+											</Carousel.Item>
+										</Carousel>
 									</Col>
 								</Row>
 								{/* stats */}
