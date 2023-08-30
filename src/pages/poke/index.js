@@ -51,7 +51,7 @@ export default function Poke() {
 						>
 							<Card.Body>
 								{/* link to back */}
-								<Row className="justify-content-between">
+								<Row className="justify-content-between align-items-center">
 									<Col md="3">
 										<Link to={`/`} className="btn btn-lg btn-outline-dark">
 											<i className="fa-solid fa-arrow-left"></i>
@@ -60,7 +60,7 @@ export default function Poke() {
 									<Col md="3" className="text-end">
 										<Image
 											thumbnail
-											width={"30%"}
+											width={"40%"}
 											src={pokeData.sprites.other.dream_world.front_default}
 										></Image>
 									</Col>
