@@ -41,7 +41,7 @@ export default function Poke() {
 	return (
 		<Template>
 			<Container>
-				<Row className="pt-5 my-4 justify-content-center">
+				<Row className="py-5 my-4 justify-content-center">
 					<Col md="10" lg="8">
 						<Card
 							className="shadow border-0"
