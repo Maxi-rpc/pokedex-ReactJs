@@ -41,8 +41,8 @@ export default function Poke() {
 	return (
 		<Template>
 			<Container>
-				<Row className="pt-5 mt-4">
-					<Col>
+				<Row className="pt-5 my-4 justify-content-center">
+					<Col md="10" lg="8">
 						<Card
 							className="shadow border-0"
 							style={{
@@ -85,7 +85,7 @@ export default function Poke() {
 											))}
 										</div>
 									</Col>
-									{/* image */}
+									{/* images */}
 									<Col md="6">
 										<Carousel fade>
 											<Carousel.Item>
